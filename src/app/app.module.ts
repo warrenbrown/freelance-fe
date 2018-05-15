@@ -9,6 +9,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ProposalComponent } from './proposal/proposal.component';
 import { ProposalListComponent } from './proposal/proposal-list/proposal-list.component';
+import { ProposalNewComponent } from './proposal/proposal-new/proposal-new.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProposalListComponent } from './proposal/proposal-list/proposal-list.co
     NavBarComponent,
     DocumentsComponent,
     ProposalComponent,
-    ProposalListComponent
+    ProposalListComponent,
+    ProposalNewComponent
   ],
   imports: [
     BrowserModule,

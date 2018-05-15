@@ -1,3 +1,3 @@
-<div>
-  {{ proposalOne.customer}}
+<div *ngFor="let proposal of proposals">
+  <h4>{{ proposal.id }} - {{ proposal.customer}}</h4>
 </div>

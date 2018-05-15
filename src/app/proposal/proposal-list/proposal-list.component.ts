@@ -19,6 +19,14 @@ export class ProposalListComponent implements OnInit {
   proposalFpur: Proposal = new Proposal(
     18, 'Something Company', 'http://portfolio.warren.com', 'Ruby on Rails', 150, 120, 15, 'jordan@devamp.com'
   );
+
+  proposals: Proposal[] = [
+    this.proposalOne,
+    this.proposalTwo,
+    this.proposalThree,
+    this.proposalFpur
+   ];
+
   constructor() { }
 
   ngOnInit() {
