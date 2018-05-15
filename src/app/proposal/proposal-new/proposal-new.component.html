@@ -1,22 +1,28 @@
 <h1>Create a Proposal</h1>
 <div>
-  <form #proposalForm="ngForm" action="">
+  <form #proposalForm="ngForm">
     <div class="form-group">
-      <label for="customer">Customer Name</label>
+      <label  for="customer">Customer Name</label>
       <input type="text"
-             name="customer"
+             class="form-control"
+             id="customer"
              placeholder="Abc Company"
              required
-             id="customer"
+             name="customer"
              #customer='ngModel'
              [(ngModel)]="proposal.customer"
       >
+      <div [hidden]="customer.valid || customer.pristine">
+				<em>Customer name is required</em>
+			</div>
     </div>
+
     <div>
       <label for="portfolio_url">Portfolio Url </label>
       <input type="text"
              name="portfolio_url"
              required
+             class="form-control"
              id="portfolio_url"
              #customer='ngModel'
              [(ngModel)]="proposal.portfolio_url"
@@ -28,6 +34,7 @@
              name="tools"
              placeholder="Tools"
              required
+             class="form-control"
              id="tools"
              #customer='ngModel'
              [(ngModel)]="proposal.tools"
@@ -39,6 +46,7 @@
       <input type="number"
              name="estimated_hours"
              required
+             class="form-control"
              id="estimated_hours"
              #customer='ngModel'
              [(ngModel)]="proposal.estimated_hours"
@@ -50,6 +58,7 @@
              name="portfolio_url"
              placeholder="Hourly Rate"
              required
+             class="form-control"
              id="hourly_rate"
              #customer='ngModel'
              [(ngModel)]="proposal.hourly_rate"
@@ -60,6 +69,7 @@
       <input type="number"
              name="weeks_to_complete"
              required
+             class="form-control"
              id="weeks_to_complete"
              #customer='ngModel'
              [(ngModel)]="proposal.weeks_to_complete"
@@ -71,6 +81,7 @@
              name="client_email"
              placeholder="Client Email"
              required
+             class="form-control"
              id="client_email"
              #customer='ngModel'
              [(ngModel)]="proposal.client_email"
@@ -79,6 +90,7 @@
   </form>
 </div>
 <div>
+  <hr>
   <p>
   Hi {{ proposal.customer }},
 

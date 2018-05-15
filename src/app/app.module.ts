@@ -11,6 +11,7 @@ import { DocumentsComponent } from './documents/documents.component';
 import { ProposalComponent } from './proposal/proposal.component';
 import { ProposalListComponent } from './proposal/proposal-list/proposal-list.component';
 import { ProposalNewComponent } from './proposal/proposal-new/proposal-new.component';
+import { ProposalShowComponent } from './proposal/proposal-show/proposal-show.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ProposalNewComponent } from './proposal/proposal-new/proposal-new.compo
     DocumentsComponent,
     ProposalComponent,
     ProposalListComponent,
-    ProposalNewComponent
+    ProposalNewComponent,
+    ProposalShowComponent
   ],
   imports: [
     BrowserModule,

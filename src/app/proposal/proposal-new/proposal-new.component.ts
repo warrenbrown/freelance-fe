@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Proposal } from '../proposal';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-proposal-new',

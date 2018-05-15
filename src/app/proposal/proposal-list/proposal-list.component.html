@@ -1,3 +1,4 @@
 <div *ngFor="let proposal of proposals">
-  <h4>{{ proposal.id }} - {{ proposal.customer}}</h4>
+  <a class="nav-link active"routerLink="/proposal/{{ proposal.id }}">{{ proposal.customer}}</a>
+  <h4>  </h4>
 </div>
