@@ -13,3 +13,7 @@ label {
 button {
   margin-top: 5px;
 }
+
+.greeting p {
+  margin-bottom: 5px;
+}
