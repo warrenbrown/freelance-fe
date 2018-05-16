@@ -1,4 +1,16 @@
-<div *ngFor="let proposal of proposals">
-  <a class="nav-link active"routerLink="/proposal/{{ proposal.id }}">{{ proposal.customer}}</a>
-  <h4>  </h4>
+<div class="contianer">
+  <div class="list-group">
+    <a class="list-group-item list-group-item-action active">
+      <h1>
+      Proposals
+      </h1>
+    </a>
+    <span *ngFor="let proposal of proposals" class="list-group-item list-group-item-action">
+        <a class="nav-link active"routerLink="/proposal/{{ proposal.id }}">
+            <h5 class="mb-1">{{ proposal.customer}}</h5>
+            <p class="mb-1">{{ proposal.hourly_rate * proposal.estimated_hours | currency: 'USD':true:'.0'  }}</p>
+            <small>4 days ago</small>
+        </a>
+    </span>
+  </div>
 </div>

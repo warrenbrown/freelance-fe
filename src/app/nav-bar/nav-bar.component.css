@@ -1,0 +1,19 @@
+.nav-styles {
+  background-color: #1a1b22;
+}
+
+.nav-styles a {
+  color: white;
+}
+
+.nav-styles a:hover {
+  color: #c9c9c9;
+}
+
+.dropdown-show a {
+  color: black;
+}
+
+.dropdown-show .nav-link .active a {
+  color: white;
+}

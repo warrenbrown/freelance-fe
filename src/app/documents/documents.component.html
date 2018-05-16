@@ -1,11 +1,18 @@
-<h1>{{pageTitle}}</h1>
-<div *ngFor="let document of documents">
-  <h3>{{ document.title}}</h3>
-  <em>{{ document.description}}</em>
-  <div>
-    <a href="{{ document.file_url}}">Download</a>
+<div class="container">
+  <h1>{{pageTitle}}</h1>
+  <br>
+  <div class="card" *ngFor="let document of documents">
+    <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Mistakes-to-avoid-when-hiring-freelancers.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">
+        {{ document.title}}
+      </h4>
+      <p class="card-text"> {{ document.description}} Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p>{{ document.image_url}}</p>
+      <div>
+        <a class="btn btn-lg btn-primary"href="{{ document.file_url}}">Download</a>
+      </div>
+      <p class="card-text"><small class="text-muted">{{ document.updated_at}}</small></p>
+    </div>
   </div>
-  <p>{{ document.updated_at}}</p>
-  <p>{{ document.image_url}}</p>
-  <hr>
 </div>

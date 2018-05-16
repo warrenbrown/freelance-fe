@@ -1,7 +1,18 @@
-<nav class="nav">
-  <a class="nav-link active"routerLink="/home">Home</a>
-  <a class="nav-link active"routerLink="/documents">Documents</a>
-  <a class="nav-link active"routerLink="/proposals">Proposals</a>
-  <a class="nav-link active"routerLink="/proposals/new">Add Proposal</a>
-  <a class="nav-link" href="#">Link</a>
-</nav>
+<div class="container">
+  <ul class="nav nav-pills nav-styles">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"routerLink="/documents" routerLinkActive="active">Documents</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Proposals</a>
+      <div class="dropdown-menu dropdown-show">
+        <a class="dropdown-item" routerLink="/proposals">Proposals</a>
+        <a class="nav-link" routerLink="/proposals/new">Add Proposal</a>
+      </div>
+    </li>
+  </ul>
+
+</div>
