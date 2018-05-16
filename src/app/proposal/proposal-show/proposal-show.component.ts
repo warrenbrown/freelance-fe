@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { ProposalService } from '../proposal.service';
 import { Proposal } from '../proposal';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
 
 @Component({
   selector: 'app-proposal-show',
@@ -8,18 +12,16 @@ import { Proposal } from '../proposal';
   styleUrls: ['./proposal-show.component.css']
 })
 export class ProposalShowComponent implements OnInit {
-  id: number;
-  routeId: any;
+  proposal: any;
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private proposalService: ProposalService
   ) { }
 
   ngOnInit() {
-    this.routeId = this.route.params.subscribe(
-      params => {
-        this.id = +params['id'];
-      }
-    );
+    const proposalRequest = this.route.params.mergeMap((params: Params) =>
+      this.proposalService.getProposal(+params['id']));
+    proposalRequest.subscribe(proposal => this.proposal = proposal);
   }
 
 }

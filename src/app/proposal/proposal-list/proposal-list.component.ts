@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProposalService } from '../proposal.service';
+import { timer } from 'rxjs/observable/timer';
 import { Proposal } from '../proposal';
 
 @Component({
@@ -7,29 +9,20 @@ import { Proposal } from '../proposal';
   styleUrls: ['./proposal-list.component.css']
 })
 export class ProposalListComponent implements OnInit {
-  proposalOne: Proposal = new Proposal(
-    15, 'Abc Company', 'http://portfolio.warren.com', 'Ruby on Rails', 150, 120, 15, 'jordan@devamp.com'
-  );
-  proposalTwo: Proposal = new Proposal(
-    16, 'Xyx Company', 'http://portfolio.warren.com', 'Ruby on Rails', 150, 120, 15, 'jordan@devamp.com'
-  );
-  proposalThree: Proposal = new Proposal(
-    17, 'efg Company', 'http://portfolio.warren.com', 'Ruby on Rails', 150, 120, 15, 'jordan@devamp.com'
-  );
-  proposalFpur: Proposal = new Proposal(
-    18, 'Something Company', 'http://portfolio.warren.com', 'Ruby on Rails', 150, 120, 15, 'jordan@devamp.com'
-  );
 
-  proposals: Proposal[] = [
-    this.proposalOne,
-    this.proposalTwo,
-    this.proposalThree,
-    this.proposalFpur
-   ];
+  proposals: Proposal[];
 
-  constructor() { }
+  constructor(private proposalService: ProposalService) { }
 
   ngOnInit() {
+    const t = timer(0, 5000);
+    t.subscribe(() => this.getProposals());
+  }
+
+  getProposals() {
+    this.proposalService.getProposals().subscribe(proposals => {
+      this.proposals = proposals;
+    });
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Proposal } from './proposal';
 
 @Component({
   selector: 'app-proposal',

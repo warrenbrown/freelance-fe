@@ -7,12 +7,12 @@
       <h4 class="card-title">
         {{ document.title}}
       </h4>
+      <p class="card-text"><small class="text-muted">Last updated {{ document.updated_at | date }}</small></p>
       <p class="card-text"> {{ document.description}} Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <p>{{ document.image_url}}</p>
       <div>
         <a class="btn btn-lg btn-primary"href="{{ document.file_url}}">Download</a>
       </div>
-      <p class="card-text"><small class="text-muted">{{ document.updated_at}}</small></p>
     </div>
   </div>
 </div>
