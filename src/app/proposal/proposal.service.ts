@@ -16,4 +16,11 @@ export class ProposalService {
     return this.http.get(this.proposalsUrl + '/' + id).map( res => res.json());
   }
 
+  createProposal(proposal) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+    return this.http.post(this.proposalsUrl + '/', JSON.stringify(proposal), { headers: headers})
+      .map( res => res.json());
+  }
+
 }

@@ -5,3 +5,11 @@ h1 {
 .form-container {
   padding: 30px;
 }
+
+label {
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 5px;
+}

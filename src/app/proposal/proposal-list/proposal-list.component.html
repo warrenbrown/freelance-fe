@@ -6,7 +6,7 @@
       </h1>
     </a>
     <span *ngFor="let proposal of proposals" class="list-group-item list-group-item-action">
-        <a class="nav-link active"routerLink="/proposal/{{ proposal.id }}">
+        <a (click)="goToShow(proposal)" class="nav-link active" >
             <h5 class="mb-1">{{ proposal.customer}}</h5>
             <p class="mb-1">{{ proposal.hourly_rate * proposal.estimated_hours | currency: 'USD':true:'.0'  }}</p>
             <small>4 days ago</small>

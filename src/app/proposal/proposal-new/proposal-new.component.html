@@ -23,7 +23,7 @@
     </div>
 
     <div class="col-md-6">
-      <form #proposalForm="ngForm">
+      <form (ngSubmit)="createProposal(proposal)"#proposalForm="ngForm">
 
         <label for="customer">Customer Name</label>
         <div class="input-group">
@@ -35,17 +35,17 @@
 
         <div>
           <label for="portfolio_url">Portfolio Url </label>
-          <input type="text" name="portfolio_url" required class="form-control" id="portfolio_url" #customer='ngModel' [(ngModel)]="proposal.portfolio_url">
+          <input type="text" name="portfolio_url" required class="form-control" id="portfolio_url" #portfolio_url='ngModel' [(ngModel)]="proposal.portfolio_url">
         </div>
         <div>
           <label for="tools">Tools</label>
-          <input type="text" name="tools" placeholder="Tools" required class="form-control" id="tools" #customer='ngModel' [(ngModel)]="proposal.tools">
+          <input type="text" name="tools" placeholder="Tools" required class="form-control" id="tools" #tools='ngModel' [(ngModel)]="proposal.tools">
         </div>
 
         <div>
           <label for="estimated_hours">Estimated Hours </label>
           <div class="input-group">
-            <input type="number" name="estimated_hours" required class="form-control" id="estimated_hours" #customer='ngModel' [(ngModel)]="proposal.estimated_hours">
+            <input type="number" name="estimated_hours" required class="form-control" id="estimated_hours" #estimated_hours='ngModel' [(ngModel)]="proposal.estimated_hours">
           </div>
 
 
@@ -55,19 +55,26 @@
           <div class="input-group-prepend">
             <span class="input-group-text">$</span>
           </div>
-          <input type="number" name="portfolio_url" placeholder="Hourly Rate" required class="form-control" id="hourly_rate" #customer='ngModel' [(ngModel)]="proposal.hourly_rate">
+          <input type="number" name="hourly_rate" placeholder="Hourly Rate" required class="form-control" id="hourly_rate" #hourly_rate='ngModel' [(ngModel)]="proposal.hourly_rate">
           <div class="input-group-append">
             <span class="input-group-text">.00</span>
           </div>
         </div>
         <div>
           <label for="weeks_to_complete">Weeks to complete </label>
-          <input type="number" name="weeks_to_complete" required class="form-control" id="weeks_to_complete" #customer='ngModel' [(ngModel)]="proposal.weeks_to_complete">
+          <input type="number" name="weeks_to_complete" required class="form-control" id="weeks_to_complete" #weeks_to_complete='ngModel' [(ngModel)]="proposal.weeks_to_complete">
         </div>
         <div>
           <label for="client_email">Client Email <em>(Optional)</em></label>
-          <input type="text" name="client_email" placeholder="Client Email" required class="form-control" id="client_email" #customer='ngModel' [(ngModel)]="proposal.client_email">
+          <input type="text" name="client_email" placeholder="Client Email" required class="form-control" id="client_email" #client_email='ngModel' [(ngModel)]="proposal.client_email">
         </div>
+        <button class="btn btn-outline-primary btn-lg"
+          type="sumit"
+          [disabled]="!proposalForm.form.valid"
+          [hidden]="submitted"
+        >
+          Generate Proposal
+        </button>
       </form>
     </div>
   </div>
